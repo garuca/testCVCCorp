@@ -1,14 +1,18 @@
 package br.com.garuca.testecvccorp.hotel
+open class Hotel{
+    open var id:Int = 0
+    open var cityCode:Int? = null
+    open var cityName:String? = null
+    open var rooms: Array<Room>? = null
+}
 
-class Hotel(id:Int,
-            name:String?,
-            cityCode:Int,
-            cityName:String?,
-            roons: Roons?)
+open class Room{
+    open var roomID:Int = 0
+    open var categoryName:String? = null
+    open var price: Price? = null
+}
 
-class Roons(roonID:Int,
-            categoryName:String?,
-            price: Price?)
-
-class Price(adult:Float,
-            child:Float)
+open class Price{
+    open var adult:Float? = null
+    open var child:Float? = null
+}
