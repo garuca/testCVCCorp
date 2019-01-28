@@ -1,5 +1,7 @@
 package br.com.garuca.testecvccorp.hotel
 
-class HotelService(
+import org.springframework.stereotype.Service
 
-)
+@Service
+class HotelService {
+}
