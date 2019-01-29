@@ -21,7 +21,7 @@ open class Hotel{
         Thread {
             for (room: Room in this.rooms!!) {
                 val total = totalCalculation(checkin, checkout, numberAdult, numberChild, room)
-                totalPrice = total!!
+                totalPrice = total!!+total*0.3f
             }
         }.start()
 
