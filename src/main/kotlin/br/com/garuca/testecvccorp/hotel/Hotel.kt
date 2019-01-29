@@ -10,7 +10,7 @@ open class Hotel{
     open var cityCode:Int? = null
     open var cityName:String? = null
     open var rooms: Array<Room>? = null
-    open var resull: Float? = null
+    open var totalPrice: Float? = null
 
     private fun totalCalculation(checkin:String, checkout:String, numberAdult:Int, numberChild: Int, room:Room):Float?{
         val days = calcIntervalDays(checkin,checkout)
@@ -20,7 +20,7 @@ open class Hotel{
     fun calculate(checkin:String,checkout:String,numberAdult:Int,numberChild: Int){
         for (room:Room in this.rooms!!){
             val total = totalCalculation(checkin,checkout,numberAdult,numberChild,room)
-            resull = total!!
+            totalPrice = total!!
         }
     }
 
