@@ -12,6 +12,13 @@ class HotelService {
                Array<Hotel>::class.java)
 
    }
+    fun getHotel(cityCode:Int?):Array<Hotel>?{
+        val restTemplate = RestTemplate()
+        return restTemplate.getForObject(
+                "https://cvcbackendhotel.herokuapp.com/hotels/$cityCode",
+                Array<Hotel>::class.java)
+
+    }
     fun applyCommission(checkin:String,checkout:String,adult:Int,child: Int,hotels:Array<Hotel>?):Array<Hotel>?{
         hotels!!.forEachIndexed{ index, hotel->
             hotel.calculate(checkin,checkout,adult,child)
