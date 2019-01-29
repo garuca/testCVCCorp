@@ -12,7 +12,7 @@ open class Hotel{
     open var rooms: Array<Room>? = null
     open var totalPrice: Float? = null
 
-    private fun totalCalculation(checkin:String, checkout:String, numberAdult:Int, numberChild: Int, room:Room):Float?{
+    fun totalCalculation(checkin:String, checkout:String, numberAdult:Int, numberChild: Int, room:Room):Float?{
         val days = calcIntervalDays(checkin,checkout)
         return (numberChild*room.price?.child!! + numberAdult*room.price?.adult!!)*days!!.toFloat()
     }
