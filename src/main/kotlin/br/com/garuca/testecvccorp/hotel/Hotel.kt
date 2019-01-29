@@ -21,10 +21,13 @@ open class Hotel{
         Thread {
             for (room: Room in this.rooms!!) {
                 val total = totalCalculation(checkin, checkout, numberAdult, numberChild, room)
-                totalPrice = total!!+total*0.3f
+                totalPrice = addCommission(total)
             }
         }.start()
 
+    }
+    fun addCommission(total:Float?):Float?{
+        return total!!+total*0.3f
     }
 
     fun calcIntervalDays(dateStart:String,dateStop:String):Int?{
