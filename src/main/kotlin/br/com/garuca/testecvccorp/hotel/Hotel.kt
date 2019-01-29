@@ -18,10 +18,13 @@ open class Hotel{
     }
 
     fun calculate(checkin:String,checkout:String,numberAdult:Int,numberChild: Int){
-        for (room:Room in this.rooms!!){
-            val total = totalCalculation(checkin,checkout,numberAdult,numberChild,room)
-            totalPrice = total!!
-        }
+        Thread {
+            for (room: Room in this.rooms!!) {
+                val total = totalCalculation(checkin, checkout, numberAdult, numberChild, room)
+                totalPrice = total!!
+            }
+        }.start()
+
     }
 
     fun calcIntervalDays(dateStart:String,dateStop:String):Int?{
